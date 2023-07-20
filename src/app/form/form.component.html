@@ -1,0 +1,13 @@
+  <form class="example-form" (ngSubmit)="submitForm()">
+    <h1>Add todos:</h1>
+    <mat-form-field class="example-full-width">
+      <mat-label>Title:</mat-label>
+      <input [(ngModel)]="todo.title" name="title" matInput placeholder="" >
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Description:</mat-label>
+      <textarea [(ngModel)]="todo.description" name="description" matInput placeholder=""></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Primary</button>
+  </form>
