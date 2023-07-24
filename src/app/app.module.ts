@@ -19,14 +19,21 @@ import {MatCardModule} from '@angular/material/card';
 
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     MatCardModule,
+    DialogComponent,
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
@@ -44,3 +51,4 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
