@@ -20,35 +20,35 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
+import { DialogModule } from '@angular/cdk/dialog';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormComponent,
-    
-    
-  ],
-  imports: [
-    BrowserModule,
-    MatCardModule,
-    DialogComponent,
-    MatIconModule,
-    MatDividerModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    AppRoutingModule,
-    FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
-    BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FormComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        MatCardModule,
+        DialogModule,
+        MatIconModule,
+        MatDividerModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        AppRoutingModule,
+        FormsModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideDatabase(() => getDatabase()),
+        provideFirestore(() => getFirestore()),
+        BrowserAnimationsModule,
+        DialogComponent
+    ]
 })
 export class AppModule { }
 
