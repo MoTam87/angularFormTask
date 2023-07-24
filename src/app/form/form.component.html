@@ -9,15 +9,13 @@
       <mat-label>Description:</mat-label>
       <textarea [(ngModel)]="todo.description" name="description" matInput placeholder=""></textarea>
     </mat-form-field>
-    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="primary">Add</button>
   </form>
-
- 
 
   <mat-card class="todos" *ngFor="let todo of todos$ | async">
     <mat-card-content>title: {{todo.title}}</mat-card-content>
     <mat-card-content>description: {{todo.description}}</mat-card-content><br><br>
-    <button mat-button (click)="openDialog(todo)">Update</button>
+    <button class="editBtn" mat-raised-button color="primary" (click)="openDialog(todo)">Edit</button>
     <button (click)="deleteTodo(todo.id)" mat-raised-button color="warn">Delete</button>
   </mat-card>
 

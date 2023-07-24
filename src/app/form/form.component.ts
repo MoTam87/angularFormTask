@@ -2,8 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { DialogComponent } from '../dialog/dialog.component';
-
-
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -16,9 +15,9 @@ export class FormComponent {
   firestore: Firestore = inject(Firestore);
   todos$ !: Observable<any[]>;
   todoCollection = collection(this.firestore, 'todos');
-  dialog: any;
+  
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.getTodos()
   }
     todo = {
@@ -49,7 +48,6 @@ export class FormComponent {
     updateDoc(todoDoc, todo)
   }
 
-
   openDialog(todo: any): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       data: {name: todo.title, description: todo.description, id: todo.id},
@@ -62,7 +60,6 @@ export class FormComponent {
       
     });
   }
-
 
 }
 
